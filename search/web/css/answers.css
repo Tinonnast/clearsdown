@@ -1,0 +1,55 @@
+#search-response-answers {
+  margin-top: 1rem;
+  grid-column: 4;
+
+  font-family: "Poppins", serif;
+  color: white;
+}
+
+#infobox {
+
+  min-height: 18rem;
+
+  background-color: #222222;
+  border-radius: 1rem;
+
+}
+
+#infobox-title {
+  padding: 1.4rem 2rem 0.4rem 2rem;
+  margin: 0;
+}
+
+#infobox-text {
+  padding: 0 2rem 1rem 2rem;
+  margin: 0;
+}
+
+#infobox-image {
+  float: right;
+
+  width: 12rem;
+
+  margin: 0 2rem 2rem 2rem;
+
+  border-radius: 1rem;
+  outline: solid 0.15rem #393939;
+  outline-offset: 0.15rem;
+}
+
+#infobox-source {
+  padding: 0 2rem 1rem 2rem;
+  color: grey;
+  display: flex;
+  gap: 0.4rem;
+}
+
+#infobox-source p,
+#infobox-source a {
+  margin: 0 0 0 0;
+}
+
+#infobox-source a {
+  color: cornflowerblue;
+  text-decoration: none;
+}

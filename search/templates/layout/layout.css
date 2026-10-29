@@ -1,0 +1,32 @@
+body {
+  margin: 0;
+
+  background-color: #161616;
+}
+
+/* search box */
+
+#top-controls {
+  width: 100vw;
+  height: 8rem; /* POSSIBLE ISSUE POINT */
+
+  margin: 0;
+  padding: 0;
+
+  position: fixed;
+
+  border: none;
+
+  background-color: #161616;
+}
+
+
+
+/* search results */
+
+#search-response {
+  padding: 8rem 0 0 0; /* because of top controls */
+
+  display: grid;
+  grid-template-columns: 8% 40% 5% 30%;
+}

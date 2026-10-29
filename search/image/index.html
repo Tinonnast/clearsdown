@@ -1,0 +1,41 @@
+ <!DOCTYPE html>
+<html lang="en">
+<head>
+  <link rel="apple-touch-icon" sizes="180x180" href="../../favicon/apple-touch-icon.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="../../favicon/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="../../favicon/favicon-16x16.png">
+  <link rel="manifest" href="../../favicon/site.webmanifest">
+  <meta charset="UTF-8">
+  <link rel="stylesheet" href="../templates/layout/layout.css">
+  <link rel="stylesheet" href="css/results.css">
+  <link rel="stylesheet" href="css/popup.css">
+  <title>Clearsdown</title>
+</head>
+<body>
+  <div id="layout-searchbox">
+    <iframe src="../templates/searchbox/searchbox.html"></iframe>
+  </div>
+    <div id="filters">
+      <div id="filter-type">
+        <button id="filter-type-standard">
+          Standard
+        </button>
+        <button id="filter-type-icons">
+          Icons
+        </button>
+        <button id="filter-type-pictures">Pictures</button>
+      </div>
+    <ul id="results-list">
+
+
+    </ul>
+  </div>
+
+  <div id="popup-wrapper" onclick="document.getElementById('popup-wrapper').style.visibility = 'hidden'">
+    <div id="image-popup" onclick="let e = 'e'">
+    </div>
+  </div>
+</body>
+<script src="js/image.js"></script>
+<script src="js/actions.js"></script>
+</html>

@@ -1,0 +1,147 @@
+#wiki {
+  background-color: #1c1c1c;
+  grid-column: 2;
+  grid-row: 1;
+  text-align: start;
+  border-radius: 12px;
+}
+
+#wiki h2 {
+  margin: 20px 30px 10px 30px;
+}
+
+#wiki p {
+  margin: 0 30px 0px 30px;
+}
+
+#wiki-image {
+  float: right;
+  width: 140px;
+  margin: 0 30px 10px 10px;
+  border-radius: 8px;
+  outline-offset: 2px;
+  outline: solid 2px #393939;
+  margin-bottom: 25px;
+}
+
+#wiki-text {
+  color: #ffffff;
+}
+
+
+.expand {
+  width: 100%;
+  height: 40px;
+  border: none;
+  background-color: #272626;
+  border-radius: 0 0 12px 12px;
+  transition-duration: .2s;
+
+}
+
+.expand svg {
+  rotate: 90deg;
+}
+
+.expand:hover {
+  background-color: #2a2a2a;
+}
+
+.expand:active {
+  background-color: #3a3a3a;
+}
+
+#ai-assist svg {
+  width: 20px;
+  height: 20px;
+  rotate: 90deg;
+}
+table {
+  width: 100%;
+  border-collapse: separate;
+  border-spacing: 0;
+  background: #181818;
+  border: 1px solid #333333;
+  border-radius: 12px;
+  overflow: hidden;
+  font-size: 14px;
+  color: #ddd;
+}
+
+th,
+td {
+  padding: 10px 14px;
+  text-align: left;
+  vertical-align: top;
+  border-bottom: 1px solid #2c2c2c;
+}
+
+th {
+  width: 30%;
+  font-weight: 600;
+  background: #202020;
+  color: #eee;
+  border-right: 1px solid #2c2c2c;
+}
+
+td {
+  color: #c8c8c8;
+}
+
+tr:last-child th,
+tr:last-child td {
+  border-bottom: none;
+}
+
+tr:hover th,
+tr:hover td {
+  background: #252525;
+}
+
+
+
+#source {
+  margin-top: 3px;
+  margin-bottom: 25px;
+  display: flex;
+  gap: 6px;
+  text-align: left;
+  justify-content: start;
+}
+
+#source p,
+#source a {
+  margin: 0 0 0 0;
+  color: grey;
+}
+
+#source a {
+  margin-right: 30px !important;
+  color: cornflowerblue !important;
+  text-decoration: none;
+}
+
+#source p {
+  margin-left: 30px;
+}
+
+#source-image {
+  display: flex;
+  gap: 6px;
+  width: 100%;
+  text-align: right;
+  justify-content: right;
+  margin-bottom: 20px;
+}
+
+#source-image p,
+#source-text a {
+  margin: 0;
+  color: grey;
+}
+
+#source-image a {
+  margin-right: 20px !important;
+  color: cornflowerblue !important;
+  text-decoration: none;
+}
