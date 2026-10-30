@@ -101,7 +101,7 @@ async function infobox(data) {
 
 // AI-Made function
 async function getSiteName(searxngResponse) {
-  try f
+  try {
 const res = await fetch(`http://${location.hostname}:3001/enrich`, {
     method: 'POST',
     headers: { 'Content-Type': 'application/json' },
