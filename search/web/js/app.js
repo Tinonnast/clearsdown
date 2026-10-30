@@ -8,7 +8,7 @@ async function search() {
   let lang = 'all'
 
   // obtain search results
-  let request = await fetch(`http://${location.hostname}:8080/search?q=${params.get('q')}&language=${lang}&format=json&`)
+  let request = await fetch(`umbrel.leaffish-tarpon.ts.net:8182/search?q=${params.get('q')}&language=${lang}&format=json&`)
   let responseData = await request.json()
 
   // bulk pull site's names
@@ -101,12 +101,24 @@ async function infobox(data) {
 
 // AI-Made function
 async function getSiteName(searxngResponse) {
-  const res = await fetch(`http://${location.hostname}:3001/enrich`, {
+  try f
+const res = await fetch(`http://${location.hostname}:3001/enrich`, {
     method: 'POST',
     headers: { 'Content-Type': 'application/json' },
     body: JSON.stringify(searxngResponse)
   });
   return await res.json();
+} catch {
+for (i of searxngResponse) {
+url = i["url"]
+    const host = new URL(url.startsWith('http') ? url : 'https://' + url).hostname || '';
+    const parts = host.toLowerCase().split('.');
+    if (parts.length >= 2) {
+      return parts[parts.length - 2].replace(/-/g, ' ').replace(/\b\w/g, c => c.toUpperCase());
+    }
+i["name"] = parts[0] ? parts[0].replace(/-/g, ' ').replace(/\b\w/g, c => c.toUpperCase()) : null;
+}
+  }
 }
 
 
