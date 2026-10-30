@@ -8,7 +8,7 @@ async function search() {
   let lang = 'all'
 
   // obtain search results
-  let request = await fetch(`http://umbrel.leaffish-tarpon.ts.net:8182/search?q=${params.get('q')}&language=${lang}&format=json&`)
+  let request = await fetch(`https://umbrel.leaffish-tarpon.ts.net/search?q=${params.get('q')}&language=${lang}&format=json&`)
   let responseData = await request.json()
 
   // bulk pull site's names
