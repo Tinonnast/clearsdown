@@ -102,22 +102,34 @@ async function infobox(data) {
 // AI-Made function
 async function getSiteName(searxngResponse) {
   try {
-const res = await fetch(`http://${location.hostname}:3001/enrich`, {
-    method: 'POST',
-    headers: { 'Content-Type': 'application/json' },
-    body: JSON.stringify(searxngResponse)
-  });
-  return await res.json();
-} catch {
-for (i of searxngResponse) {
-url = i["url"]
-    const host = new URL(url.startsWith('http') ? url : 'https://' + url).hostname || '';
-    const parts = host.toLowerCase().split('.');
-    if (parts.length >= 2) {
-      return parts[parts.length - 2].replace(/-/g, ' ').replace(/\b\w/g, c => c.toUpperCase());
+    const res = await fetch(`http://${location.hostname}:3001/enrich`, {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify(searxngResponse)
+    });
+    return await res.json();
+  } catch {
+    if (searxngResponse && Array.isArray(searxngResponse.results)) {
+      for (let item of searxngResponse.results) {
+        if (item.url) {
+          try {
+            const url = item.url.startsWith('http') ? item.url : 'https://' + item.url;
+            const host = new URL(url).hostname || '';
+            const parts = host.toLowerCase().split('.');
+            if (parts.length >= 2) {
+              item.site_name = parts[parts.length - 2].replace(/-/g, ' ').replace(/\b\w/g, c => c.toUpperCase());
+            } else {
+              item.site_name = parts[0] ? parts[0].replace(/-/g, ' ').replace(/\b\w/g, c => c.toUpperCase()) : "Unknown";
+            }
+          } catch {
+            item.site_name = "Unknown";
+          }
+        } else {
+          item.site_name = "Unknown";
+        }
+      }
     }
-i["name"] = parts[0] ? parts[0].replace(/-/g, ' ').replace(/\b\w/g, c => c.toUpperCase()) : null;
-}
+    return searxngResponse;
   }
 }
 
